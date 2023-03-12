@@ -61,7 +61,7 @@ section {
 
 .active {
     display: block;
-    animation: appear 1s ease-in-out;
+    animation: appear .5s ease-out;
     transform: translateY(0) scaleY(1);
 }
 
@@ -110,6 +110,18 @@ section {
 .controls .activebtn i {
             color: var(--color-white);
 }
+.updateButton {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    border-radius: 50%;
+    padding: 1rem;
+  }
+  .updateButton:hover {
+    background-color: var(--color-white);
+    color: var(--color-secondary);
+    border-radius: 50%;
+    padding: 1rem;
+  }
 
 /*Header-Content*/
 
@@ -143,6 +155,7 @@ section {
     transition: all .4s ease-in-out;
 }
 .header-content .left-header .image img {
+    border-radius: var(--br-sm-2);
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -150,13 +163,15 @@ section {
     filter: grayscale(100%);
 }
 .header-content .left-header .image img:hover {
+    border-radius: var(--br-sm-2);
     filter: grayscale(0);
 }
 .header-content .right-header {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-right: 18rem;
+    justify-content: left;
+    padding-top:  10rem;
+    padding-right: 10rem;
 }
 .header-content .right-header .name {
     font-size: 3rem;
@@ -167,6 +182,22 @@ section {
 .header-content .right-header p {
     margin: 1.5rem 0;
     line-height: 2rem;
+}
+
+
+.updates-info {
+    display: grid;
+
+    
+}
+.updates-info p {
+    line-height: 2rem;
+    padding: 1rem;
+    color: var(--color-grey-1);
+}
+.updates-info h4 {
+    font-size: 2rem;
+    text-transform: uppercase;
 }
 
 /*About*/
@@ -441,6 +472,70 @@ section {
     transform: scale(1);
 }
 
+/*Blogs*/
+
+.blogs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin-top: 3rem;
+}
+.blogs .blog {
+   position: relative;
+   background-color: var(--color-grey-5);
+   border-radius: 5px;
+   box-shadow: 1px 1px 20px rgba(0,0,0,.1);
+   transition: all .4s ease-in-out;
+}
+.blogs .blog:hover {
+    box-shadow: 1px 1px 20px rgba(0,0,0,.3);
+    transform: translateY(-5px);
+    transition: all .4s ease-in-out;
+}
+.blogs .blog:hover img {
+    filter: grayscale(0);
+    transform: scale(1.1);
+    box-shadow: 1px 4px 15px rgba(0,0,0,.8);
+}
+.blogs .blog img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    filter: grayscale(100%);
+    transition: all .4s ease-in-out;
+}
+.blogs .blog .blog-text {
+    margin-top: -7px;
+    padding: 1.1rem;
+    border-top: 8px solid var(--color-secondary);
+}
+.blogs .blog .blog-text h4 {
+    font-size: 1.5rem;
+    margin-bottom: .7rem;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
+}
+.blogs .blog .blog-text h4:hover {
+    color: var(--color-secondary);
+}
+.blogs .blog .blog-text p {
+    color: var(--color-grey-2);
+    line-height: 2rem;
+    padding-bottom: 1rem;
+}
+
+/*Contact*/
+
+.contact-content-con {
+    display: flex;
+    padding-top: 3.5rem;
+}
+.contact-content-con .left-contact {
+    flex: 2;
+}
+
 /*independent Components*/
 
 .btn-con {
@@ -511,7 +606,7 @@ section {
     z-index: -1;
     transform: translate(-50%, -50%);
     font-weight: 700;
-    font-size: 5.3rem;
+    font-size: 7rem;
 }
 .about-container .left-about p {
     padding-left: 0;
